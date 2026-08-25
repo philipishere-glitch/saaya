@@ -10,57 +10,18 @@
 </head>
 <body>
 <main id="top">
-<section class="hero-shell" aria-label="Saaya's Toy Box homepage introduction">
-  <nav class="hero-nav" aria-label="Primary navigation">
-    <a class="hero-brand" href="#top" aria-label="Saaya's Toy Box home"><img id="heroLogo" alt="Saaya's Toy Box — Toys. Treats. Hope."></a>
-    <div class="hero-menu">
-      <a class="active" href="#top">HOME</a>
-      <a href="#matching">HOW IT WORKS</a>
-      <a href="#organizations">ORGANIZATIONS</a>
-      <a href="donations.html">DONATIONS⌄</a>
-      <a href="#saaya">ABOUT SAAYA</a>
-      <a href="#contact">CONTACT</a>
-    </div>
-    <button class="hero-donate-nav" onclick="openForm('donor')">DONATE TOYS</button>
-  </nav>
-
-  <div class="hero-main">
-    <div class="hero-photo" id="heroPhoto" role="img" aria-label="Happy rescue dogs surrounded by toys"></div>
-    <div class="hero-copy-wrap">
-      <div class="hero-copy-card">
-        <h1>More Wags.<span class="script">Brighter Days. ♡</span></h1>
-        <p>Saaya’s Toy Box connects generous hearts with rescue dogs in need by delivering toys that bring comfort, joy, and hope.</p>
-        <div class="hero-actions">
-          <button class="hero-donate" onclick="openForm('donor')">DONATE TOYS</button>
-          <a class="hero-outline" href="#organizations">VIEW ORGANIZATIONS</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-wave" aria-hidden="true"></div>
-  <div class="hero-pillars" aria-label="How Saaya's Toy Box creates impact">
-    <article class="hero-pillar">
-      <div class="hero-icon">🐶</div>
-      <h3>Honoring Saaya</h3><span class="heart">♡</span>
-      <p>Created in loving memory of Saaya, who believed every dog deserves kindness and joy.</p>
-    </article>
-    <article class="hero-pillar">
-      <div class="hero-icon">🎁</div>
-      <h3>Toys. Treats. Hope.</h3><span class="heart">♡</span>
-      <p>We collect and deliver toys and treats that bring comfort to rescue dogs waiting for their forever homes.</p>
-    </article>
-    <article class="hero-pillar">
-      <div class="hero-icon">🤲</div>
-      <h3>Connecting Hearts</h3><span class="heart">♡</span>
-      <p>We partner with rescue organizations so every donation goes directly to dogs who need it most.</p>
-    </article>
-    <article class="hero-pillar">
-      <div class="hero-icon">🏠</div>
-      <h3>Visible Impact</h3><span class="heart">♡</span>
-      <p>We share the joy your donations create—because every wag tells a story.</p>
-    </article>
-  </div>
+<section class="exact-hero" aria-label="Saaya's Toy Box homepage introduction">
+  <div class="hero-loading">Loading Saaya’s Toy Box…</div>
+  <img id="exactHeroImage" alt="Saaya's Toy Box — More Wags. Brighter Days. Dogs playing among toys, with the charity mission and ways to donate.">
+  <a class="hero-hotspot hs-home" href="#top" aria-label="Home">Home</a>
+  <a class="hero-hotspot hs-how" href="#matching" aria-label="How it works">How it works</a>
+  <a class="hero-hotspot hs-org" href="#organizations" aria-label="Organizations">Organizations</a>
+  <a class="hero-hotspot hs-donations" href="donations.html" aria-label="Donations">Donations</a>
+  <a class="hero-hotspot hs-about" href="#saaya" aria-label="About Saaya">About Saaya</a>
+  <a class="hero-hotspot hs-contact" href="#contact" aria-label="Contact">Contact</a>
+  <button class="hero-hotspot hs-donate-nav" onclick="openForm('donor')" aria-label="Donate toys">Donate toys</button>
+  <button class="hero-hotspot hs-donate-main" onclick="openForm('donor')" aria-label="Donate toys">Donate toys</button>
+  <a class="hero-hotspot hs-view-org" href="#organizations" aria-label="View organizations">View organizations</a>
 </section>
 
 <section class="matching" id="matching">
@@ -107,14 +68,25 @@
 
 <div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><div><h3 id="modalTitle">Match a gift</h3><p id="modalIntro">Tell us what kind of support you would like to provide.</p></div><button class="close" onclick="closeForm()">×</button></div><form onsubmit="demoSubmit(event)"><div class="form-grid" id="donorForm"><div class="field"><label>Your name</label><input required placeholder="Name"></div><div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>What would you like to give?</label><select><option>Toys</option><option>Treats</option><option>Enrichment</option><option>Comfort items</option><option>I'm flexible</option></select></div><div class="field"><label>Approximate amount</label><input placeholder="e.g. 10 toys or $100"></div><div class="field full"><label>Anything we should know?</label><textarea rows="4" placeholder="Preferences, location, organization type..."></textarea></div></div><div class="form-grid" id="orgForm" style="display:none"><div class="field"><label>Organization</label><input placeholder="Organization name"></div><div class="field"><label>Contact email</label><input type="email" placeholder="contact@example.org"></div><div class="field"><label>Organization type</label><select><option>Shelter</option><option>Rescue</option><option>Foster network</option><option>Community program</option><option>Other</option></select></div><div class="field"><label>Website / social link</label><input placeholder="Optional"></div><div class="field full"><label>What do your dogs need?</label><textarea rows="4" placeholder="Items, quantities, sizes, dietary requirements, urgency..."></textarea></div><div class="field full"><label>Delivery / collection details</label><textarea rows="3" placeholder="How the matched items can be received..."></textarea></div></div><div class="submit-row"><button class="btn btn-rust" type="submit" id="submitButton">Continue</button></div><div class="disclaimer">Concept only — this demo does not yet submit or store information.</div></form></div></div>
 
-<script src="hero-assets.js"></script>
 <script>
-  (function(){
-    const logo=document.getElementById('heroLogo');
-    const photo=document.getElementById('heroPhoto');
-    if(window.SAAYA_HERO_LOGO) logo.src=window.SAAYA_HERO_LOGO;
-    if(window.SAAYA_HERO_PHOTO) photo.style.backgroundImage=`url(${window.SAAYA_HERO_PHOTO})`;
-  })();
+(async function loadExactHero(){
+  const img=document.getElementById('exactHeroImage');
+  try{
+    const files=Array.from({length:9},(_,i)=>`assets/hero-v2-${String(i).padStart(2,'0')}.txt`);
+    const parts=await Promise.all(files.map(async f=>{
+      const r=await fetch(f,{cache:'no-store'});
+      if(!r.ok) throw new Error(`${f}: ${r.status}`);
+      return r.text();
+    }));
+    const b64=parts.join('').replace(/\s+/g,'');
+    img.onload=()=>document.documentElement.classList.add('hero-loaded');
+    img.onerror=()=>console.error('Hero image data URI failed');
+    img.src='data:image/webp;base64,'+b64;
+  }catch(e){
+    console.error('Hero failed to load',e);
+    document.querySelector('.hero-loading').textContent='Hero image failed to load — please refresh.';
+  }
+})();
 </script>
 <script src="script.js"></script>
 </body>
