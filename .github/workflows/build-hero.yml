@@ -1,0 +1,49 @@
+name: Build permanent hero image
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/build-hero.yml'
+      - 'assets/hero-data-*.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rebuild hero WebP from stored chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat assets/hero-data-00.txt \
+              assets/hero-data-01.txt \
+              assets/hero-data-02.txt \
+              assets/hero-data-03.txt \
+              assets/hero-data-04.txt \
+              assets/hero-data-05.txt \
+              assets/hero-data-06.txt \
+              assets/hero-data-07.txt \
+              assets/hero-data-08.txt \
+            | tr -d '\r\n\t ' \
+            | base64 --decode > assets/saaya-approved-hero.webp
+          test -s assets/saaya-approved-hero.webp
+          file assets/saaya-approved-hero.webp
+
+      - name: Commit permanent image
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/saaya-approved-hero.webp
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Create permanent approved hero image'
+            git push
+          fi
