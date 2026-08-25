@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Saaya's Toy Box — Match Joy to Need</title>
+<title>Saaya's Toy Box — More Wags. Brighter Days.</title>
 <meta name="description" content="Saaya's Toy Box matches toys, treats and enrichment gifts with dog organizations that need them most — in loving memory of Saaya.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="homepage.css">
@@ -13,7 +13,7 @@
 <nav class="site-nav">
   <div class="wrap nav-inner refined-nav">
     <a href="#top" class="brand brand-lockup" aria-label="Saaya's Toy Box home">
-      <img src="assets/saaya-toy-box-logo.png" alt="Saaya's Toy Box" class="nav-brand-art">
+      <span class="brand-art-shell"><img src="assets/saaya-toy-box-logo.png" alt="Saaya's Toy Box" class="nav-brand-art"></span>
     </a>
     <div class="nav-links refined-links">
       <a href="#top">Home</a>
@@ -26,36 +26,26 @@
     <button class="btn btn-dark mobile-cta" onclick="openForm('donor')">Donate</button>
   </div>
 </nav>
+
 <main id="top">
 <header class="hero new-hero">
-  <div class="wrap new-hero-grid">
+  <div class="hero-photo-band">
+    <img class="hero-dogs-photo" src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&fit=crop&fm=jpg&q=88&w=2000" alt="Happy dog surrounded by dog toys">
+    <div class="hero-photo-overlay"></div>
+  </div>
+
+  <div class="wrap hero-content-wrap">
     <div class="new-hero-copy reveal">
       <div class="eyebrow">A memorial with purpose</div>
       <h1>More Wags.<br><span class="accent">Brighter Days.</span></h1>
-      <p class="hero-copy">Saaya’s Toy Box connects generous people with shelters, rescues and dog-focused organizations that need toys, treats and enrichment. Organizations tell us what would help. Donors choose a real need. We make the match.</p>
+      <p class="hero-copy"><strong>Saaya’s Toy Box matches useful gifts to real needs.</strong> Shelters, rescues and foster organizations tell us which toys, treats and enrichment items would genuinely help the dogs in their care. Donors choose a request, and every gift has a clear destination.</p>
       <div class="hero-actions">
         <button class="btn btn-dark hero-primary" onclick="openForm('donor')">Donate toys & treats →</button>
         <button class="btn btn-ghost" onclick="openForm('organization')">Our organization has a need</button>
       </div>
       <div class="hero-subnote new-subnote">
         <div class="tiny">♥</div>
-        <div><strong>In loving memory of Saaya.</strong> Every match carries forward the play, comfort and happiness she brought into the world.</div>
-      </div>
-    </div>
-
-    <div class="new-hero-visual reveal">
-      <div class="hero-image-shell">
-        <img src="assets/saaya-full.jpg" alt="Saaya surrounded by the spirit of play that inspired Saaya’s Toy Box" class="hero-saaya-photo">
-        <img src="assets/saaya-toy-box-logo.png" alt="Dog toy box filled with toys" class="hero-toybox-overlay">
-        <div class="hero-photo-wash"></div>
-        <div class="hero-photo-label">
-          <span class="label-paw">🐾</span>
-          <div><small>THE IDEA</small><strong>Match joy to a real need.</strong></div>
-        </div>
-      </div>
-      <div class="saaya-memory-card">
-        <img src="assets/saaya-full.jpg" alt="Saaya">
-        <div><small>Inspired by</small><strong>Saaya</strong><span>Her joy lives on in every Toy Box.</span></div>
+        <div><strong>Created in loving memory of Saaya.</strong> Her joy lives on through moments of play, comfort and happiness for dogs who are still waiting for home.</div>
       </div>
     </div>
   </div>
@@ -67,123 +57,52 @@
     <article><span>🐾</span><div><strong>Visible Impact</strong><small>Every fulfilled request has a clear destination.</small></div></article>
   </div>
 </header>
+
 <div class="ticker" aria-hidden="true"><div class="ticker-track">
   <span>Needs first</span><span>Gifts matched</span><span>Dogs supported</span><span>Less waste</span><span>More joy</span><span>Community powered</span>
   <span>Needs first</span><span>Gifts matched</span><span>Dogs supported</span><span>Less waste</span><span>More joy</span><span>Community powered</span>
 </div></div>
+
 <section class="matching" id="matching">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">The matching model</div>
-      <div>
-        <h2>Not another donation page. A clear link between need and gift.</h2>
-        <p class="section-intro">Organizations publish what would genuinely help the dogs in their care. Donors choose a need they want to fill. Saaya’s Toy Box makes the connection visible, practical and personal.</p>
-      </div>
+      <div><h2>Not another donation page. A clear link between need and gift.</h2><p class="section-intro">Organizations publish what would genuinely help the dogs in their care. Donors choose a need they want to fill. Saaya’s Toy Box makes the connection visible, practical and personal.</p></div>
     </div>
     <div class="matching-board reveal">
       <div class="board-top"><div class="board-title">Matching board <span>— concept preview</span></div><div class="board-status"><i class="live-dot"></i> Example needs</div></div>
       <div class="board-grid">
         <div class="requests">
-          <article class="request-card">
-            <div class="req-top"><div><span class="req-tag">Enrichment</span><h3>Durable puzzle toys</h3><p>Requested for dogs spending extended time in kennel care.</p></div><strong>12 / 20</strong></div>
-            <div class="progress"><span style="width:60%"></span></div><div class="req-foot"><span>8 still needed</span><span>60% matched</span></div>
-          </article>
-          <article class="request-card">
-            <div class="req-top"><div><span class="req-tag">Treats</span><h3>Training treats</h3><p>Small, soft treats for positive reinforcement and enrichment sessions.</p></div><strong>28 / 40</strong></div>
-            <div class="progress"><span style="width:70%"></span></div><div class="req-foot"><span>12 still needed</span><span>70% matched</span></div>
-          </article>
-          <article class="request-card">
-            <div class="req-top"><div><span class="req-tag">Play</span><h3>Medium tug toys</h3><p>For supervised play, decompression and interaction with volunteers.</p></div><strong>6 / 15</strong></div>
-            <div class="progress"><span style="width:40%"></span></div><div class="req-foot"><span>9 still needed</span><span>40% matched</span></div>
-          </article>
+          <article class="request-card"><div class="req-top"><div><span class="req-tag">Enrichment</span><h3>Durable puzzle toys</h3><p>Requested for dogs spending extended time in kennel care.</p></div><strong>12 / 20</strong></div><div class="progress"><span style="width:60%"></span></div><div class="req-foot"><span>8 still needed</span><span>60% matched</span></div></article>
+          <article class="request-card"><div class="req-top"><div><span class="req-tag">Treats</span><h3>Training treats</h3><p>Small, soft treats for positive reinforcement and enrichment sessions.</p></div><strong>28 / 40</strong></div><div class="progress"><span style="width:70%"></span></div><div class="req-foot"><span>12 still needed</span><span>70% matched</span></div></article>
+          <article class="request-card"><div class="req-top"><div><span class="req-tag">Play</span><h3>Medium tug toys</h3><p>For supervised play, decompression and interaction with volunteers.</p></div><strong>6 / 15</strong></div><div class="progress"><span style="width:40%"></span></div><div class="req-foot"><span>9 still needed</span><span>40% matched</span></div></article>
         </div>
-        <aside class="match-panel">
-          <div><small>Your next match</small><h3>Help fill exactly what’s missing.</h3><p>Instead of sending a generic box, donors can choose an open request based on item type, quantity, organization or urgency.</p><div class="match-pills"><span>Toys</span><span>Treats</span><span>Enrichment</span><span>Comfort</span></div></div>
-          <div><button class="btn btn-dark" onclick="openForm('donor')">Choose a need →</button><div class="helper-note">Example matching-board content for design visualization.</div></div>
-        </aside>
+        <aside class="match-panel"><div><small>Your next match</small><h3>Help fill exactly what’s missing.</h3><p>Instead of sending a generic box, donors can choose an open request based on item type, quantity, organization or urgency.</p><div class="match-pills"><span>Toys</span><span>Treats</span><span>Enrichment</span><span>Comfort</span></div></div><div><button class="btn btn-dark" onclick="openForm('donor')">Choose a need →</button><div class="helper-note">Example matching-board content for design visualization.</div></div></aside>
       </div>
     </div>
-    <div class="flow reveal">
-      <article class="flow-card" data-n="01"><h3>An organization asks</h3><p>They share specific supplies, quantities and any important requirements.</p></article>
-      <article class="flow-card" data-n="02"><h3>The need is reviewed</h3><p>Requests become clear, donor-friendly listings rather than vague wish lists.</p></article>
-      <article class="flow-card" data-n="03"><h3>A donor chooses</h3><p>Individuals or businesses select something they genuinely want to support.</p></article>
-      <article class="flow-card" data-n="04"><h3>The request closes</h3><p>Once fulfilled, the need disappears — reducing excess and duplicate donations.</p></article>
-    </div>
   </div>
 </section>
+
 <section id="organizations">
   <div class="wrap audience">
-    <article class="a-card org reveal">
-      <span class="badge">For organizations</span>
-      <h3>Ask for what your dogs actually need.</h3>
-      <p>Shelters, rescues, foster groups and community programs can submit focused requests for toys, treats, enrichment or other approved dog supplies.</p>
-      <div class="line-list"><div>Specify item type, quantity, size or dietary requirements</div><div>Keep requests current as needs change</div><div>Close requests automatically when fulfilled</div></div>
-      <button class="btn btn-rust" onclick="openForm('organization')">Submit a need</button>
-    </article>
-    <article class="a-card donor reveal" id="donors">
-      <span class="badge">For donors</span>
-      <h3>Know exactly where your gift is going.</h3>
-      <p>Choose a need instead of guessing. A small gift can feel more meaningful when the destination, purpose and remaining need are clear.</p>
-      <div class="line-list"><div>Browse by need rather than by charity alone</div><div>Support one item, several items or an entire request</div><div>See when a request has been fully matched</div></div>
-      <button class="btn btn-dark" onclick="openForm('donor')">Find a match</button>
-    </article>
+    <article class="a-card org reveal"><span class="badge">For organizations</span><h3>Ask for what your dogs actually need.</h3><p>Shelters, rescues, foster groups and community programs can submit focused requests for toys, treats, enrichment or other approved dog supplies.</p><div class="line-list"><div>Specify item type, quantity, size or dietary requirements</div><div>Keep requests current as needs change</div><div>Close requests automatically when fulfilled</div></div><button class="btn btn-rust" onclick="openForm('organization')">Submit a need</button></article>
+    <article class="a-card donor reveal" id="donors"><span class="badge">For donors</span><h3>Know exactly where your gift is going.</h3><p>Choose a need instead of guessing. A small gift can feel more meaningful when the destination, purpose and remaining need are clear.</p><div class="line-list"><div>Browse by need rather than by charity alone</div><div>Support one item, several items or an entire request</div><div>See when a request has been fully matched</div></div><button class="btn btn-dark" onclick="openForm('donor')">Find a match</button></article>
   </div>
 </section>
+
 <section class="memorial" id="saaya">
   <div class="memorial-inner">
     <div class="memorial-image reveal"><img src="assets/saaya-portrait.jpg" alt="Portrait of Saaya"></div>
-    <div class="memorial-copy reveal">
-      <div class="kicker">In loving memory</div>
-      <h2>Saaya is the reason this exists.</h2>
-      <p>Saaya’s Toy Box is built around something beautifully simple: dogs find enormous joy in small things — a favorite toy, a good treat, a moment of play, something familiar to settle beside.</p>
-      <div class="quote">Her name stays on every match, turning remembrance into something another dog can feel.</div>
-      <p>The full story of Saaya can live here in your own words — personal enough to make the mission unforgettable, restrained enough to preserve the dignity and professionalism of the project.</p>
-      <div class="signature">Saaya’s Toy Box · A memorial with purpose</div>
-    </div>
+    <div class="memorial-copy reveal"><div class="kicker">In loving memory</div><h2>Saaya is the reason this exists.</h2><p>Saaya’s Toy Box is built around something beautifully simple: dogs find enormous joy in small things — a favorite toy, a good treat, a moment of play, something familiar to settle beside.</p><div class="quote">Her name stays on every match, turning remembrance into something another dog can feel.</div><p>Her story is the heart of the project, while the matching model gives that memory a practical purpose.</p><div class="signature">Saaya’s Toy Box · A memorial with purpose</div></div>
   </div>
 </section>
-<section class="principles">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">Designed for trust</div><div><h2>Professional enough for organizations. Personal enough for donors.</h2><p class="section-intro">The model becomes stronger when every participant can understand what is needed, what has been matched and when a request is complete.</p></div></div>
-    <div class="principle-grid">
-      <article class="principle reveal"><div class="icon">◎</div><h3>Specific requests</h3><p>Organizations ask for concrete items rather than receiving boxes of things they cannot use.</p></article>
-      <article class="principle reveal"><div class="icon">↗</div><h3>Visible fulfillment</h3><p>Donors can see the remaining need and know when a request is fully matched.</p></article>
-      <article class="principle reveal"><div class="icon">◇</div><h3>Thoughtful curation</h3><p>Requests can be reviewed before publication to keep the experience credible and useful.</p></article>
-    </div>
-  </div>
-</section>
-<section class="final-cta">
-  <div class="wrap"><div class="cta-box reveal"><div class="cta-copy"><h2>Let one good memory create another.</h2><p>Match a toy, treat or enrichment gift to a dog organization that can put it to immediate use — and let Saaya’s joy keep moving forward.</p></div><button class="btn" onclick="openForm('donor')">Match a gift →</button></div></div>
-</section>
+
+<section class="final-cta"><div class="wrap"><div class="cta-box reveal"><div class="cta-copy"><h2>Let one good memory create another.</h2><p>Match a toy, treat or enrichment gift to a dog organization that can put it to immediate use — and let Saaya’s joy keep moving forward.</p></div><button class="btn" onclick="openForm('donor')">Match a gift →</button></div></div></section>
 </main>
-<footer>
-  <div class="wrap footer-grid"><div><strong>Saaya’s Toy Box</strong><p>Matching dog toys, treats and enrichment to organizations with real needs — in loving memory of Saaya.</p></div><div class="footer-links"><a href="#matching">How it works</a>
-      <a href="donations.html">Donations</a><a href="#organizations">Organizations</a><a href="#saaya">Saaya</a></div></div>
-</footer>
-<div class="modal" id="modal">
-  <div class="modal-card">
-    <div class="modal-top"><div><h3 id="modalTitle">Match a gift</h3><p id="modalIntro">Tell us what kind of support you would like to provide.</p></div><button class="close" onclick="closeForm()">×</button></div>
-    <form onsubmit="demoSubmit(event)">
-      <div class="form-grid" id="donorForm">
-        <div class="field"><label>Your name</label><input required placeholder="Name"></div>
-        <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div>
-        <div class="field"><label>What would you like to give?</label><select><option>Toys</option><option>Treats</option><option>Enrichment</option><option>Comfort items</option><option>I'm flexible</option></select></div>
-        <div class="field"><label>Approximate amount</label><input placeholder="e.g. 10 toys or $100"></div>
-        <div class="field full"><label>Anything we should know?</label><textarea rows="4" placeholder="Preferences, location, organization type..."></textarea></div>
-      </div>
-      <div class="form-grid" id="orgForm" style="display:none">
-        <div class="field"><label>Organization</label><input placeholder="Organization name"></div>
-        <div class="field"><label>Contact email</label><input type="email" placeholder="contact@example.org"></div>
-        <div class="field"><label>Organization type</label><select><option>Shelter</option><option>Rescue</option><option>Foster network</option><option>Community program</option><option>Other</option></select></div>
-        <div class="field"><label>Website / social link</label><input placeholder="Optional"></div>
-        <div class="field full"><label>What do your dogs need?</label><textarea rows="4" placeholder="Items, quantities, sizes, dietary requirements, urgency..."></textarea></div>
-        <div class="field full"><label>Delivery / collection details</label><textarea rows="3" placeholder="How the matched items can be received..."></textarea></div>
-      </div>
-      <div class="submit-row"><button class="btn btn-rust" type="submit" id="submitButton">Continue</button></div>
-      <div class="disclaimer">Concept only — this demo does not yet submit or store information.</div>
-    </form>
-  </div>
-</div>
+
+<footer><div class="wrap footer-grid"><div><strong>Saaya’s Toy Box</strong><p>Matching dog toys, treats and enrichment to organizations with real needs — in loving memory of Saaya.</p></div><div class="footer-links"><a href="#matching">How it works</a><a href="donations.html">Donations</a><a href="#organizations">Organizations</a><a href="#saaya">Saaya</a></div></div></footer>
+
+<div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><div><h3 id="modalTitle">Match a gift</h3><p id="modalIntro">Tell us what kind of support you would like to provide.</p></div><button class="close" onclick="closeForm()">×</button></div><form onsubmit="demoSubmit(event)"><div class="form-grid" id="donorForm"><div class="field"><label>Your name</label><input required placeholder="Name"></div><div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>What would you like to give?</label><select><option>Toys</option><option>Treats</option><option>Enrichment</option><option>Comfort items</option><option>I'm flexible</option></select></div><div class="field"><label>Approximate amount</label><input placeholder="e.g. 10 toys or $100"></div><div class="field full"><label>Anything we should know?</label><textarea rows="4" placeholder="Preferences, location, organization type..."></textarea></div></div><div class="form-grid" id="orgForm" style="display:none"><div class="field"><label>Organization</label><input placeholder="Organization name"></div><div class="field"><label>Contact email</label><input type="email" placeholder="contact@example.org"></div><div class="field"><label>Organization type</label><select><option>Shelter</option><option>Rescue</option><option>Foster network</option><option>Community program</option><option>Other</option></select></div><div class="field"><label>Website / social link</label><input placeholder="Optional"></div><div class="field full"><label>What do your dogs need?</label><textarea rows="4" placeholder="Items, quantities, sizes, dietary requirements, urgency..."></textarea></div><div class="field full"><label>Delivery / collection details</label><textarea rows="3" placeholder="How the matched items can be received..."></textarea></div></div><div class="submit-row"><button class="btn btn-rust" type="submit" id="submitButton">Continue</button></div><div class="disclaimer">Concept only — this demo does not yet submit or store information.</div></form></div></div>
 <script src="script.js"></script>
 </body>
 </html>
