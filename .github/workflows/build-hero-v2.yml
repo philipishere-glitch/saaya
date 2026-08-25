@@ -1,0 +1,47 @@
+name: Build exact Saaya hero v2
+
+on:
+  push:
+    branches: [ fix-exact-hero ]
+    paths:
+      - '.github/workflows/build-hero-v2.yml'
+      - 'assets/hero-v2-*.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble validated hero image
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          parts=[]
+          for i in range(9):
+              p=Path(f'assets/hero-v2-{i:02d}.txt')
+              parts.append(p.read_text().strip())
+          raw=''.join(parts)
+          data=base64.b64decode(raw, validate=True)
+          assert data[:4] == b'RIFF' and data[8:12] == b'WEBP', data[:12]
+          Path('assets/saaya-hero-exact.webp').write_bytes(data)
+          print('hero bytes:', len(data))
+          PY
+          file assets/saaya-hero-exact.webp
+      - name: Commit hero image
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/saaya-hero-exact.webp
+          if git diff --cached --quiet; then
+            echo 'No changes'
+          else
+            git commit -m 'Create exact Saaya hero image'
+            git push
+          fi
