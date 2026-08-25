@@ -2,7 +2,7 @@ name: Build final Saaya hero
 
 on:
   push:
-    branches: [ hero-final ]
+    branches: [ main ]
     paths:
       - '.github/workflows/build-final-hero.yml'
       - 'assets/final-hero-*.txt'
