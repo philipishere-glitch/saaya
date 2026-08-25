@@ -4,54 +4,33 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Saaya's Toy Box — More Wags. Brighter Days.</title>
-<meta name="description" content="Saaya's Toy Box connects donors with shelters, rescues and foster organizations that need toys, treats and enrichment — in loving memory of Saaya.">
+<meta name="description" content="Saaya's Toy Box matches toys, treats and enrichment with shelters, rescues and foster organizations that need them — in loving memory of Saaya.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-<nav class="saaya-nav">
-  <div class="wrap saaya-nav-inner">
-    <a class="saaya-wordmark" href="#top" aria-label="Saaya's Toy Box home">
-      <svg class="saaya-dogmark" viewBox="0 0 92 92" aria-hidden="true"><path d="M25 26c-8-7-18-4-20 5-2 8 4 19 12 22 0 22 14 35 31 35s31-13 31-35c8-3 14-14 12-22-2-9-12-12-20-5-5-9-13-14-23-14S30 17 25 26Z" fill="none" stroke="#102a48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="35" cy="45" r="3.5" fill="#102a48"/><circle cx="59" cy="45" r="3.5" fill="#102a48"/><path d="M41 55c5 5 11 5 16 0" fill="none" stroke="#102a48" stroke-width="4" stroke-linecap="round"/><circle cx="49" cy="71" r="14" fill="#c88d42" stroke="#102a48" stroke-width="3"/><path d="M43 66l12 10M55 66L43 76" stroke="#e8bb7d" stroke-width="2" opacity=".8"/></svg>
-      <span class="saaya-wordmark-text"><span class="saaya-script">Saaya’s</span><strong>TOY BOX</strong><small>TOYS. TREATS. HOPE.</small></span>
-    </a>
-    <div class="saaya-nav-links">
-      <a href="#top" class="active">Home</a>
-      <a href="#matching">How It Works</a>
-      <a href="#organizations">Organizations</a>
-      <a href="donations.html">Donations</a>
-      <a href="#saaya">About Saaya</a>
-      <button class="saaya-donate" onclick="openForm('donor')">♡&nbsp;&nbsp; Donate Toys</button>
-    </div>
-  </div>
-</nav>
-
 <main id="top">
-<section class="showcase-hero">
-  <div class="showcase-photo" aria-hidden="true"></div>
-  <div class="showcase-fade"></div>
-  <div class="wrap showcase-copy">
-    <div class="showcase-copy-inner reveal">
-      <h1>More Wags.<br><span>Brighter Days.</span> <i>♡</i></h1>
-      <p>Saaya’s Toy Box connects generous hearts with rescue dogs in need by matching toys, treats and enrichment to shelters and organizations that can put them to immediate use.</p>
-      <div class="showcase-actions">
-        <button class="saaya-donate" onclick="openForm('donor')">♡&nbsp;&nbsp; Donate Toys</button>
-        <button class="outline-action" onclick="document.getElementById('organizations').scrollIntoView({behavior:'smooth'})">View Organizations</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap hero-pillars reveal">
-    <article><div class="pillar-icon halo">♡</div><h3>Honoring Saaya</h3><small>♡</small><p>Created in loving memory of Saaya, whose happiness inspires every act of giving.</p></article>
-    <article><div class="pillar-icon">🧸</div><h3>Toys. Treats. Hope.</h3><small>♡</small><p>We match toys, treats and enrichment that bring comfort and joy to dogs in care.</p></article>
-    <article><div class="pillar-icon">🤝</div><h3>Connecting Hearts</h3><small>♡</small><p>We connect generous people with shelters and rescues that have specific needs.</p></article>
-    <article><div class="pillar-icon">⌂</div><h3>Visible Impact</h3><small>♡</small><p>Every fulfilled request has a clear destination, so every wag tells a story.</p></article>
-  </div>
+<section class="exact-hero" aria-label="Saaya's Toy Box homepage introduction">
+  <img src="assets/saaya-exact-hero.jpg" alt="Saaya's Toy Box. More Wags. Brighter Days. We connect generous hearts with rescue dogs by delivering toys that bring comfort, joy and hope.">
+  <a class="hero-hotspot hs-home" href="#top" aria-label="Home"></a>
+  <a class="hero-hotspot hs-how" href="#matching" aria-label="How it works"></a>
+  <a class="hero-hotspot hs-org" href="#organizations" aria-label="Organizations"></a>
+  <a class="hero-hotspot hs-donations" href="donations.html" aria-label="Donations"></a>
+  <a class="hero-hotspot hs-about" href="#saaya" aria-label="About Saaya"></a>
+  <button class="hero-hotspot hs-donate-nav" onclick="openForm('donor')" aria-label="Donate toys"></button>
+  <button class="hero-hotspot hs-donate-main" onclick="openForm('donor')" aria-label="Donate toys"></button>
+  <a class="hero-hotspot hs-view-org" href="#organizations" aria-label="View organizations"></a>
 </section>
 
 <section class="matching" id="matching">
   <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">The matching model</div><div><h2>Not another donation page. A clear link between need and gift.</h2><p class="section-intro">Organizations publish what would genuinely help the dogs in their care. Donors choose a need they want to fill. Saaya’s Toy Box makes the connection visible, practical and personal.</p></div></div>
+    <div class="section-head reveal">
+      <div class="kicker">The matching model</div>
+      <div>
+        <h2>Not another donation page. A clear link between need and gift.</h2>
+        <p class="section-intro">Organizations publish what would genuinely help the dogs in their care. Donors choose a need they want to fill. Saaya’s Toy Box makes the connection visible, practical and personal.</p>
+      </div>
+    </div>
     <div class="matching-board reveal">
       <div class="board-top"><div class="board-title">Matching board <span>— concept preview</span></div><div class="board-status"><i class="live-dot"></i> Example needs</div></div>
       <div class="board-grid">
@@ -74,7 +53,10 @@
 </section>
 
 <section class="memorial" id="saaya">
-  <div class="memorial-inner"><div class="memorial-image reveal"><img src="assets/saaya-portrait.jpg" alt="Portrait of Saaya"></div><div class="memorial-copy reveal"><div class="kicker">In loving memory</div><h2>Saaya is the reason this exists.</h2><p>Saaya’s Toy Box is built around something beautifully simple: dogs find enormous joy in small things — a favorite toy, a good treat, a moment of play, something familiar to settle beside.</p><div class="quote">Her name stays on every match, turning remembrance into something another dog can feel.</div><p>Her story is the heart of the project, while the matching model gives that memory a practical purpose.</p><div class="signature">Saaya’s Toy Box · A memorial with purpose</div></div></div>
+  <div class="memorial-inner">
+    <div class="memorial-image reveal"><img src="assets/saaya-portrait.jpg" alt="Portrait of Saaya"></div>
+    <div class="memorial-copy reveal"><div class="kicker">In loving memory</div><h2>Saaya is the reason this exists.</h2><p>Saaya’s Toy Box is built around something beautifully simple: dogs find enormous joy in small things — a favorite toy, a good treat, a moment of play, something familiar to settle beside.</p><div class="quote">Her name stays on every match, turning remembrance into something another dog can feel.</div><p>Her story is the heart of the project, while the matching model gives that memory a practical purpose.</p><div class="signature">Saaya’s Toy Box · A memorial with purpose</div></div>
+  </div>
 </section>
 
 <section class="final-cta"><div class="wrap"><div class="cta-box reveal"><div class="cta-copy"><h2>Let one good memory create another.</h2><p>Match a toy, treat or enrichment gift to a dog organization that can put it to immediate use — and let Saaya’s joy keep moving forward.</p></div><button class="btn" onclick="openForm('donor')">Match a gift →</button></div></div></section>
