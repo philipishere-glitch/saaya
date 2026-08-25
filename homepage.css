@@ -1,58 +1,7 @@
-/* Saaya's Toy Box — approved hero composition */
-:root{--navy:#102a48;--gold:#c88d42;--cream:#fbf7ef;--cream2:#f3ebdf;--ink:#171d1b;--muted:#626d68;}
-.saaya-nav{position:sticky;top:0;z-index:80;background:rgba(255,252,247,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,42,72,.07);box-shadow:0 6px 24px rgba(30,35,32,.04)}
-.saaya-nav-inner{min-height:118px;display:flex;align-items:center;justify-content:space-between;gap:38px}
-.saaya-wordmark{display:flex;align-items:center;gap:11px;min-width:290px}
-.saaya-dogmark{width:92px;height:92px;flex:0 0 auto}
-.saaya-wordmark-text{display:flex;flex-direction:column;line-height:1}
-.saaya-script{font-family:Georgia,"Times New Roman",serif;font-style:italic;color:var(--navy);font-size:42px;line-height:.92;letter-spacing:-.045em}
-.saaya-wordmark-text strong{color:var(--navy);font-size:22px;letter-spacing:.18em;margin-top:4px}
-.saaya-wordmark-text small{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.16em;margin-top:8px}
-.saaya-nav-links{display:flex;align-items:center;gap:36px;margin-left:auto;white-space:nowrap}
-.saaya-nav-links>a{text-transform:uppercase;font-size:12px;letter-spacing:.055em;font-weight:760;color:#29312e;position:relative}
-.saaya-nav-links>a:after{content:"";position:absolute;left:0;right:100%;bottom:-12px;height:2px;background:var(--gold);transition:.22s ease}
-.saaya-nav-links>a:hover:after,.saaya-nav-links>a.active:after{right:0}
-.saaya-donate{border:0;border-radius:999px;background:var(--navy);color:#fff;padding:16px 24px;text-transform:uppercase;font-size:12px;letter-spacing:.06em;font-weight:900;box-shadow:0 10px 26px rgba(16,42,72,.18);transition:.2s ease}
-.saaya-donate:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(16,42,72,.22)}
-
-.showcase-hero{position:relative;background:var(--cream);padding:0 0 74px;overflow:hidden}
-.showcase-photo{position:absolute;left:31%;right:0;top:0;height:610px;background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&fm=jpg&q=90&w=1800');background-size:cover;background-position:center 44%;filter:saturate(.95) contrast(1.02)}
-.showcase-photo:after{content:"";position:absolute;right:4%;bottom:3%;width:33%;height:33%;background:url('assets/saaya-toy-box-logo.png') center/contain no-repeat;filter:drop-shadow(0 18px 28px rgba(32,36,32,.20));opacity:.96}
-.showcase-fade{position:absolute;left:0;right:0;top:0;height:610px;background:linear-gradient(90deg,var(--cream) 0%,rgba(251,247,239,.98) 21%,rgba(251,247,239,.88) 33%,rgba(251,247,239,.32) 48%,rgba(251,247,239,0) 62%),linear-gradient(0deg,rgba(251,247,239,.18),rgba(251,247,239,0) 35%)}
-.showcase-copy{position:relative;z-index:3;min-height:610px;display:flex;align-items:center}
-.showcase-copy-inner{width:min(540px,44vw);padding:58px 0 70px}
-.showcase-copy h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(66px,6vw,98px);line-height:.92;letter-spacing:-.05em;margin:0 0 28px}
-.showcase-copy h1 span{font-family:cursive;color:var(--gold);font-weight:500;letter-spacing:-.045em;font-size:.82em}
-.showcase-copy h1 i{font-family:Georgia,serif;color:var(--gold);font-size:.55em;font-style:normal;margin-left:8px}
-.showcase-copy p{font-size:18px;line-height:1.65;color:#243039;max-width:515px;margin:0}
-.showcase-actions{display:flex;gap:16px;align-items:center;margin-top:28px;flex-wrap:wrap}
-.outline-action{border:1.5px solid var(--navy);background:rgba(255,255,255,.35);border-radius:999px;padding:14px 24px;text-transform:uppercase;letter-spacing:.05em;font-size:12px;font-weight:900;color:var(--navy);transition:.2s ease}
-.outline-action:hover{background:#fff;transform:translateY(-2px)}
-.hero-pillars{position:relative;z-index:6;margin-top:-16px;background:rgba(255,252,247,.98);border:1px solid rgba(16,42,72,.08);border-radius:30px;box-shadow:0 24px 62px rgba(43,38,32,.11);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-.hero-pillars article{padding:34px 28px 30px;text-align:center;min-height:250px;position:relative}
-.hero-pillars article+article:before{content:"";position:absolute;left:0;top:38px;bottom:38px;width:1px;background:rgba(16,42,72,.10)}
-.pillar-icon{width:72px;height:72px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#fff9f0;border:1px solid rgba(200,141,66,.16);font-size:31px;color:var(--gold);box-shadow:0 9px 24px rgba(82,64,42,.06)}
-.pillar-icon.halo{font-size:38px}
-.hero-pillars h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:22px;margin:0 0 4px}
-.hero-pillars small{display:block;color:var(--gold);font-size:16px;margin-bottom:8px}
-.hero-pillars p{font-size:14px;line-height:1.65;color:#4b5551;max-width:245px;margin:0 auto}
-
-.matching{background:#fffdf9;padding-top:100px}.matching .kicker,.memorial-copy .kicker{color:var(--gold)}
-.matching-board{background:var(--navy)}
-.req-tag{color:#e8e1d7}.progress span{background:linear-gradient(90deg,#c88d42,#e6ba7c)}
-.match-panel{background:linear-gradient(145deg,#f7f0e7,#e9dfd2)}
-.org{background:var(--navy)}
-.btn-rust{background:var(--gold)!important}.final-cta .cta-box{background:linear-gradient(125deg,#102a48,#173b63 58%,#c88d42)}
-.memorial{background:var(--navy)}
-
-@media(max-width:1120px){
-.saaya-nav-inner{min-height:96px}.saaya-wordmark{min-width:225px}.saaya-dogmark{width:72px;height:72px}.saaya-script{font-size:32px}.saaya-wordmark-text strong{font-size:17px}.saaya-nav-links{gap:18px}.saaya-nav-links>a{font-size:10px}.saaya-donate{padding:13px 17px;font-size:10px}
-.showcase-photo{left:38%}.showcase-copy-inner{width:47vw}.hero-pillars{grid-template-columns:1fr 1fr}.hero-pillars article:nth-child(3):before{display:none}.hero-pillars article:nth-child(n+3){border-top:1px solid rgba(16,42,72,.08)}
-}
-@media(max-width:900px){
-.saaya-nav-links{display:none}.saaya-wordmark{min-width:auto}.saaya-nav-inner{min-height:90px}.mobile-cta{display:inline-flex!important}
-.showcase-photo{left:0;top:440px;height:430px}.showcase-fade{height:870px;background:linear-gradient(180deg,var(--cream) 0%,var(--cream) 42%,rgba(251,247,239,.45) 56%,rgba(251,247,239,0) 75%)}.showcase-copy{min-height:440px}.showcase-copy-inner{width:100%;padding:52px 0 38px}.showcase-copy h1{font-size:64px}.showcase-copy p{max-width:650px}.hero-pillars{margin-top:390px}
-}
-@media(max-width:640px){
-.saaya-nav-inner{min-height:78px}.saaya-dogmark{width:58px;height:58px}.saaya-script{font-size:26px}.saaya-wordmark-text strong{font-size:14px}.saaya-wordmark-text small{font-size:8px}.showcase-copy h1{font-size:51px}.showcase-copy p{font-size:16px}.showcase-photo{top:430px;height:330px}.hero-pillars{grid-template-columns:1fr;margin-top:300px}.hero-pillars article{min-height:190px}.hero-pillars article+article:before{display:none}.hero-pillars article+article{border-top:1px solid rgba(16,42,72,.08)}
-}
+/* Saaya's Toy Box — exact approved hero artwork */
+:root{--navy:#102a48;--gold:#c88d42;--cream:#fbf7ef;--ink:#171d1b;}
+html{scroll-behavior:smooth}.exact-hero{position:relative;width:100%;background:#fbf7ef;overflow:hidden}.exact-hero>img{display:block;width:100%;height:auto}.hero-hotspot{position:absolute;z-index:8;background:transparent;border:0;padding:0;cursor:pointer;border-radius:999px}.hero-hotspot:focus-visible{outline:3px solid rgba(200,141,66,.9);outline-offset:2px}
+.hs-home{left:33.2%;top:3.5%;width:5.5%;height:6%}.hs-how{left:39%;top:3.5%;width:9%;height:6%}.hs-org{left:48%;top:3.5%;width:10%;height:6%}.hs-donations{left:58%;top:3.5%;width:8.5%;height:6%}.hs-about{left:66.8%;top:3.5%;width:8.5%;height:6%}.hs-donate-nav{left:83.1%;top:3.1%;width:13.2%;height:6.2%}.hs-donate-main{left:6.3%;top:49.2%;width:12.8%;height:6.2%}.hs-view-org{left:20.2%;top:49.2%;width:14.1%;height:6.2%}
+.matching{background:#fffdf9;padding-top:96px}.matching .kicker,.memorial-copy .kicker{color:var(--gold)}.matching-board{background:var(--navy)}.req-tag{color:#e8e1d7}.progress span{background:linear-gradient(90deg,#c88d42,#e6ba7c)}.match-panel{background:linear-gradient(145deg,#f7f0e7,#e9dfd2)}.org{background:var(--navy)}.btn-rust{background:var(--gold)!important}.final-cta .cta-box{background:linear-gradient(125deg,#102a48,#173b63 58%,#c88d42)}.memorial{background:var(--navy)}
+@media(max-width:900px){.exact-hero{overflow-x:auto}.exact-hero>img{width:1180px;max-width:none}.hero-hotspot{display:none}.matching{padding-top:64px}}
+@media(max-width:640px){.exact-hero>img{width:980px}}
