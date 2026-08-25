@@ -21,18 +21,28 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat assets/hero-data-00.txt \
-              assets/hero-data-01.txt \
-              assets/hero-data-02.txt \
-              assets/hero-data-03.txt \
-              assets/hero-data-04.txt \
-              assets/hero-data-05.txt \
-              assets/hero-data-06.txt \
-              assets/hero-data-07.txt \
-              assets/hero-data-08.txt \
-            | tr -d '\r\n\t ' \
-            | base64 --decode > assets/saaya-approved-hero.webp
-          test -s assets/saaya-approved-hero.webp
+          python - <<'PY'
+          from pathlib import Path
+          import base64, re
+
+          chunks=[]
+          for i in range(9):
+              p=Path(f'assets/hero-data-{i:02d}.txt')
+              chunks.append(p.read_text())
+
+          raw=''.join(chunks)
+          clean=re.sub(r'[^A-Za-z0-9+/=]', '', raw)
+          clean=clean.rstrip('=')
+          clean += '=' * ((4 - len(clean) % 4) % 4)
+          data=base64.b64decode(clean, validate=False)
+
+          out=Path('assets/saaya-approved-hero.webp')
+          out.write_bytes(data)
+          print('decoded bytes:', len(data))
+          print('header:', data[:12])
+          if not (data.startswith(b'RIFF') and data[8:12] == b'WEBP'):
+              raise SystemExit('Decoded file is not a valid WebP container')
+          PY
           file assets/saaya-approved-hero.webp
 
       - name: Commit permanent image
