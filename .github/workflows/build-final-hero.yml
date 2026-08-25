@@ -1,0 +1,56 @@
+name: Build final Saaya hero
+
+on:
+  push:
+    branches: [ hero-final ]
+    paths:
+      - '.github/workflows/build-final-hero.yml'
+      - 'assets/final-hero-*.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble exact hero
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import base64, hashlib
+
+          parts = []
+          for i in range(10):
+              p = Path(f'assets/final-hero-{i:02d}.txt')
+              parts.append(p.read_text().strip())
+
+          raw = ''.join(parts)
+          data = base64.b64decode(raw, validate=True)
+
+          assert len(data) == 110024, len(data)
+          assert data[:4] == b'RIFF' and data[8:12] == b'WEBP', data[:12]
+          assert hashlib.sha256(data).hexdigest() == '2d5f58542069d96d016e817f49429b42f34d5ffbffe86e7e9e6c6768eeda09f4'
+
+          Path('assets/saaya-approved-hero.webp').write_bytes(data)
+          print('verified hero bytes', len(data))
+          PY
+
+          file assets/saaya-approved-hero.webp
+
+      - name: Commit validated hero
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/saaya-approved-hero.webp
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Install validated exact Saaya hero"
+            git push
+          fi
