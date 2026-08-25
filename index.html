@@ -11,7 +11,7 @@
 <body>
 <main id="top">
 <section class="exact-hero" aria-label="Saaya's Toy Box homepage introduction">
-  <img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000a26c81f5bce016426c5ea845&ts=496561&p=fs&cid=1&sig=e9ee94222372491cb29e15ce96e8b4931aeb7b76ef167ee9483e8374ae67b8e6&v=0" alt="Saaya's Toy Box. More Wags. Brighter Days. We connect generous hearts with rescue dogs by delivering toys that bring comfort, joy and hope.">
+  <img id="exactHeroImage" alt="Saaya's Toy Box. More Wags. Brighter Days. We connect generous hearts with rescue dogs by delivering toys that bring comfort, joy and hope.">
   <a class="hero-hotspot hs-home" href="#top" aria-label="Home"></a>
   <a class="hero-hotspot hs-how" href="#matching" aria-label="How it works"></a>
   <a class="hero-hotspot hs-org" href="#organizations" aria-label="Organizations"></a>
@@ -65,6 +65,21 @@
 <footer><div class="wrap footer-grid"><div><strong>Saaya’s Toy Box</strong><p>Matching dog toys, treats and enrichment to organizations with real needs — in loving memory of Saaya.</p></div><div class="footer-links"><a href="#matching">How it works</a><a href="donations.html">Donations</a><a href="#organizations">Organizations</a><a href="#saaya">Saaya</a></div></div></footer>
 
 <div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><div><h3 id="modalTitle">Match a gift</h3><p id="modalIntro">Tell us what kind of support you would like to provide.</p></div><button class="close" onclick="closeForm()">×</button></div><form onsubmit="demoSubmit(event)"><div class="form-grid" id="donorForm"><div class="field"><label>Your name</label><input required placeholder="Name"></div><div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>What would you like to give?</label><select><option>Toys</option><option>Treats</option><option>Enrichment</option><option>Comfort items</option><option>I'm flexible</option></select></div><div class="field"><label>Approximate amount</label><input placeholder="e.g. 10 toys or $100"></div><div class="field full"><label>Anything we should know?</label><textarea rows="4" placeholder="Preferences, location, organization type..."></textarea></div></div><div class="form-grid" id="orgForm" style="display:none"><div class="field"><label>Organization</label><input placeholder="Organization name"></div><div class="field"><label>Contact email</label><input type="email" placeholder="contact@example.org"></div><div class="field"><label>Organization type</label><select><option>Shelter</option><option>Rescue</option><option>Foster network</option><option>Community program</option><option>Other</option></select></div><div class="field"><label>Website / social link</label><input placeholder="Optional"></div><div class="field full"><label>What do your dogs need?</label><textarea rows="4" placeholder="Items, quantities, sizes, dietary requirements, urgency..."></textarea></div><div class="field full"><label>Delivery / collection details</label><textarea rows="3" placeholder="How the matched items can be received..."></textarea></div></div><div class="submit-row"><button class="btn btn-rust" type="submit" id="submitButton">Continue</button></div><div class="disclaimer">Concept only — this demo does not yet submit or store information.</div></form></div></div>
+
+<script>
+(async function loadExactHero(){
+  const img=document.getElementById('exactHeroImage');
+  try{
+    const files=Array.from({length:9},(_,i)=>`assets/hero-data-${String(i).padStart(2,'0')}.txt`);
+    const parts=await Promise.all(files.map(f=>fetch(f,{cache:'no-store'}).then(r=>{if(!r.ok) throw new Error(f); return r.text();})));
+    const data=parts.join('').replace(/\s+/g,'');
+    img.src='data:image/webp;base64,'+data;
+  }catch(err){
+    console.error('Hero image failed to assemble',err);
+    img.src='assets/saaya-exact-hero.jpg';
+  }
+})();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
