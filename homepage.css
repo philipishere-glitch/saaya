@@ -1,17 +1,27 @@
 /* Saaya's Toy Box — exact approved hero with live clickable hotspots */
 :root{--navy:#102a48;--gold:#c88d42;--cream:#fbf7ef;--ink:#171d1b;--muted:#606b68;}
 html{scroll-behavior:smooth}
-body{background:var(--cream)}
+body{background:var(--cream);margin:0}
 
-/* The uploaded approved composition is now the rendered hero itself. */
+/* IMPORTANT: the approved artwork is 1536×1024. Never enlarge it past its
+   native pixel dimensions: enlarging baked-in typography is what caused the
+   soft/blurry appearance on wider desktop displays. */
 .hero-shell{
   position:relative;
-  width:100%;
+  width:min(100%,1536px);
+  max-width:1536px;
   aspect-ratio:3 / 2;
   min-height:0;
+  margin:0 auto;
   overflow:hidden;
-  background:#fbf7ef url('assets/saaya-approved-hero.webp') center top / 100% 100% no-repeat;
+  background-color:#fbf7ef;
+  background-image:url('assets/saaya-approved-hero.webp');
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
   border-bottom:1px solid rgba(16,42,72,.08);
+  /* Chrome/Edge render scaled raster artwork more crisply with this hint. */
+  image-rendering:-webkit-optimize-contrast;
 }
 
 /* Everything visible in the hero comes from the approved artwork. The existing
@@ -78,7 +88,8 @@ body{background:var(--cream)}
 .hero-donate{left:6.3%!important;top:49.2%!important;width:12.7%!important;height:5.7%!important}
 .hero-outline{left:20.1%!important;top:49.2%!important;width:14.3%!important;height:5.7%!important}
 
-/* Keep the rest of the existing site visually aligned with the approved palette. */
+/* Keep the rest of the existing site full width even though the hero artwork is
+   intentionally capped at its native resolution. */
 .matching{background:#fffdf9;padding-top:96px}.matching .kicker,.memorial-copy .kicker{color:var(--gold)}.matching-board{background:var(--navy)}.req-tag{color:#e8e1d7}.progress span{background:linear-gradient(90deg,#c88d42,#e6ba7c)}.match-panel{background:linear-gradient(145deg,#f7f0e7,#e9dfd2)}.org{background:var(--navy)}.btn-rust{background:var(--gold)!important}.final-cta .cta-box{background:linear-gradient(125deg,#102a48,#173b63 58%,#c88d42)}.memorial{background:var(--navy)}
 
 @media(max-width:900px){
