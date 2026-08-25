@@ -107,15 +107,7 @@
 
 <div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><div><h3 id="modalTitle">Match a gift</h3><p id="modalIntro">Tell us what kind of support you would like to provide.</p></div><button class="close" onclick="closeForm()">×</button></div><form onsubmit="demoSubmit(event)"><div class="form-grid" id="donorForm"><div class="field"><label>Your name</label><input required placeholder="Name"></div><div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>What would you like to give?</label><select><option>Toys</option><option>Treats</option><option>Enrichment</option><option>Comfort items</option><option>I'm flexible</option></select></div><div class="field"><label>Approximate amount</label><input placeholder="e.g. 10 toys or $100"></div><div class="field full"><label>Anything we should know?</label><textarea rows="4" placeholder="Preferences, location, organization type..."></textarea></div></div><div class="form-grid" id="orgForm" style="display:none"><div class="field"><label>Organization</label><input placeholder="Organization name"></div><div class="field"><label>Contact email</label><input type="email" placeholder="contact@example.org"></div><div class="field"><label>Organization type</label><select><option>Shelter</option><option>Rescue</option><option>Foster network</option><option>Community program</option><option>Other</option></select></div><div class="field"><label>Website / social link</label><input placeholder="Optional"></div><div class="field full"><label>What do your dogs need?</label><textarea rows="4" placeholder="Items, quantities, sizes, dietary requirements, urgency..."></textarea></div><div class="field full"><label>Delivery / collection details</label><textarea rows="3" placeholder="How the matched items can be received..."></textarea></div></div><div class="submit-row"><button class="btn btn-rust" type="submit" id="submitButton">Continue</button></div><div class="disclaimer">Concept only — this demo does not yet submit or store information.</div></form></div></div>
 
-<script src="hero-assets.js"></script>
-<script>
-  (function(){
-    const logo=document.getElementById('heroLogo');
-    const photo=document.getElementById('heroPhoto');
-    if(window.SAAYA_HERO_LOGO) logo.src=window.SAAYA_HERO_LOGO;
-    if(window.SAAYA_HERO_PHOTO) photo.style.backgroundImage=`url(${window.SAAYA_HERO_PHOTO})`;
-  })();
-</script>
+<script src="final-hero-loader.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
