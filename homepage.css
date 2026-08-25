@@ -3,86 +3,65 @@
 html{scroll-behavior:smooth}
 body{background:var(--cream)}
 
-/* The uploaded approved composition is now the rendered hero itself. */
-.hero-shell{
+.exact-hero{
   position:relative;
   width:100%;
-  aspect-ratio:3 / 2;
-  min-height:0;
+  aspect-ratio:3/2;
   overflow:hidden;
-  background:#fbf7ef url('assets/saaya-approved-hero.webp') center top / 100% 100% no-repeat;
+  background:#fbf7ef;
   border-bottom:1px solid rgba(16,42,72,.08);
 }
-
-/* Everything visible in the hero comes from the approved artwork. The existing
-   semantic links/buttons are retained as transparent clickable areas on top. */
-.hero-nav,
-.hero-main,
-.hero-copy-wrap,
-.hero-copy-card,
-.hero-actions{
+.exact-hero>img{
   position:absolute;
   inset:0;
+  display:block;
   width:100%;
   height:100%;
-  min-height:0;
-  margin:0;
-  padding:0;
-  background:none;
+  object-fit:fill;
+}
+.hero-loading{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#8d7658;
+  font:600 14px/1.4 system-ui,sans-serif;
+  letter-spacing:.03em;
+  z-index:1;
+}
+.hero-loaded .hero-loading{display:none}
+.hero-hotspot{
+  position:absolute;
   z-index:10;
-  pointer-events:none;
-}
-.hero-wave,.hero-pillars,.hero-photo,.hero-copy-card h1,.hero-copy-card p,.hero-icon,.hero-pillar h3,.hero-pillar p,.hero-pillar .heart{display:none!important}
-.hero-brand img{display:none!important}
-
-.hero-brand,
-.hero-menu a,
-.hero-donate-nav,
-.hero-donate,
-.hero-outline{
-  position:absolute!important;
-  display:block!important;
-  margin:0!important;
-  padding:0!important;
-  min-width:0!important;
-  width:auto;
-  height:auto;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  color:transparent!important;
-  font-size:0!important;
-  line-height:0!important;
-  opacity:1!important;
-  pointer-events:auto!important;
+  display:block;
+  border:0;
+  padding:0;
+  margin:0;
+  background:transparent;
   cursor:pointer;
-  z-index:30;
+  color:transparent;
+  font-size:0;
 }
-.hero-brand:focus-visible,.hero-menu a:focus-visible,.hero-donate-nav:focus-visible,.hero-donate:focus-visible,.hero-outline:focus-visible{
-  outline:3px solid rgba(200,141,66,.9)!important;
+.hero-hotspot:focus-visible{
+  outline:3px solid rgba(200,141,66,.95);
   outline-offset:2px;
+  border-radius:999px;
 }
-.hero-menu{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;pointer-events:none!important;z-index:20!important}
-.hero-menu a:after,.hero-donate-nav:before,.hero-donate:before{display:none!important}
+/* Mapped to the approved 1536×1024 composition. */
+.hs-home{left:33.1%;top:3.1%;width:4.9%;height:6.2%}
+.hs-how{left:39.0%;top:3.1%;width:9.0%;height:6.2%}
+.hs-org{left:48.0%;top:3.1%;width:10.0%;height:6.2%}
+.hs-donations{left:58.0%;top:3.1%;width:8.6%;height:6.2%}
+.hs-about{left:66.8%;top:3.1%;width:8.6%;height:6.2%}
+.hs-contact{left:75.4%;top:3.1%;width:7.2%;height:6.2%}
+.hs-donate-nav{left:83.0%;top:3.0%;width:13.4%;height:6.3%}
+.hs-donate-main{left:6.2%;top:49.2%;width:12.9%;height:6.3%}
+.hs-view-org{left:20.1%;top:49.2%;width:14.4%;height:6.3%}
 
-/* Click areas mapped to the exact approved 1536×1024 composition. */
-.hero-brand{left:4.2%!important;top:0.7%!important;width:25.5%!important;height:15.5%!important}
-.hero-menu a:nth-child(1){left:33.2%!important;top:3.25%!important;width:4.9%!important;height:5.5%!important}
-.hero-menu a:nth-child(2){left:39.2%!important;top:3.25%!important;width:8.6%!important;height:5.5%!important}
-.hero-menu a:nth-child(3){left:48.5%!important;top:3.25%!important;width:9.8%!important;height:5.5%!important}
-.hero-menu a:nth-child(4){left:58.3%!important;top:3.25%!important;width:8.1%!important;height:5.5%!important}
-.hero-menu a:nth-child(5){left:66.7%!important;top:3.25%!important;width:8.7%!important;height:5.5%!important}
-.hero-menu a:nth-child(6){left:75.3%!important;top:3.25%!important;width:7.2%!important;height:5.5%!important}
-.hero-donate-nav{left:83.1%!important;top:3.0%!important;width:13.2%!important;height:5.8%!important}
-.hero-donate{left:6.3%!important;top:49.2%!important;width:12.7%!important;height:5.7%!important}
-.hero-outline{left:20.1%!important;top:49.2%!important;width:14.3%!important;height:5.7%!important}
-
-/* Keep the rest of the existing site visually aligned with the approved palette. */
 .matching{background:#fffdf9;padding-top:96px}.matching .kicker,.memorial-copy .kicker{color:var(--gold)}.matching-board{background:var(--navy)}.req-tag{color:#e8e1d7}.progress span{background:linear-gradient(90deg,#c88d42,#e6ba7c)}.match-panel{background:linear-gradient(145deg,#f7f0e7,#e9dfd2)}.org{background:var(--navy)}.btn-rust{background:var(--gold)!important}.final-cta .cta-box{background:linear-gradient(125deg,#102a48,#173b63 58%,#c88d42)}.memorial{background:var(--navy)}
 
 @media(max-width:900px){
-  .hero-shell{min-width:760px}
+  .exact-hero{min-width:760px}
   body{overflow-x:auto}
   .matching{padding-top:64px}
 }
